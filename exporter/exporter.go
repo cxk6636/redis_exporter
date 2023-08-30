@@ -654,6 +654,7 @@ func (e *Exporter) scrapeRedisHost(ch chan<- prometheus.Metric) error {
 	if e.options.ExportClientList {
 		e.extractConnectedClientMetrics(ch, c)
 	}
+	e.extractClientListMetrics(ch, c)
 
 	if e.options.IsTile38 {
 		e.extractTile38Metrics(ch, c)
