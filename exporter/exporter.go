@@ -568,6 +568,7 @@ func (e *Exporter) scrapeRedisHost(ch chan<- prometheus.Metric) error {
 	e.extractCountKeysMetrics(ch, c)
 
 	e.extractKeyGroupMetrics(ch, c, dbCount)
+	e.extractClientListMetrics(ch, c)
 
 	if strings.Contains(infoAll, "# Sentinel") {
 		e.extractSentinelMetrics(ch, c)
