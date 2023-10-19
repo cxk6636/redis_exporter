@@ -60,7 +60,7 @@ func (e *Exporter) extractClientListMetrics(ch chan<- prometheus.Metric, c redis
 					ch,
 					"connected_clients_list_idle",
 					res,
-					r["id"], r["ip"], r["port"], r["idle"], r["age"])
+					r["id"], r["ip"], r["port"], r["age"], r["idle"])
 			}
 		}
 	}
